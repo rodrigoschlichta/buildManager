@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name="tb_resident")
-public class Resident implements Serializable {
+public class Tenant implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,10 +16,10 @@ public class Resident implements Serializable {
     private String phone;
     private String email;
 
-    public Resident() {
+    public Tenant() {
     }
 
-    public Resident(Long id, String name, String phone, String email) {
+    public Tenant(Long id, String name, String phone, String email) {
         this.id = id;
         this.name = name;
         this.phone = phone;
@@ -62,8 +62,8 @@ public class Resident implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Resident resident = (Resident) o;
-        return Objects.equals(id, resident.id);
+        Tenant tenant = (Tenant) o;
+        return Objects.equals(id, tenant.id);
     }
 
     @Override
