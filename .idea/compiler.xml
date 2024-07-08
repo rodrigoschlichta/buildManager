@@ -9,9 +9,6 @@
         <module name="buildManager" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="buildManager" target="22" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
