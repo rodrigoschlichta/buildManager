@@ -1,14 +1,13 @@
 package com.camfel.buildManager.entities;
 
-
 import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tb_owner")
-public class owner implements Serializable {
+@Table(name="tb_resident")
+public class Resident implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,14 +16,22 @@ public class owner implements Serializable {
     private String phone;
     private String email;
 
-    public owner() {
+    public Resident() {
     }
 
-    public owner(String name, Long id, String phone, String email) {
-        this.name = name;
+    public Resident(Long id, String name, String phone, String email) {
         this.id = id;
+        this.name = name;
         this.phone = phone;
         this.email = email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -33,14 +40,6 @@ public class owner implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Long getCpf() {
-        return id;
-    }
-
-    public void setCpf(Long id) {
-        this.id = id;
     }
 
     public String getPhone() {
@@ -63,8 +62,8 @@ public class owner implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        owner owner = (owner) o;
-        return Objects.equals(id, owner.id);
+        Resident resident = (Resident) o;
+        return Objects.equals(id, resident.id);
     }
 
     @Override
