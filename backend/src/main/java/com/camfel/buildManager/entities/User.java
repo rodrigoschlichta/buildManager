@@ -17,16 +17,16 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String lastName;
+    private String email;
     private String password;
 
     public User() {
     }
 
-    public User(Long id, String name, String lastName, String password) {
+    public User(Long id, String name, String email, String password) {
         this.id = id;
         this.name = name;
-        this.lastName = lastName;
+        this.email = email;
         this.password = password;
     }
 
@@ -53,12 +53,12 @@ public class User implements Serializable {
 
     public String getLastName() {
 
-        return lastName;
+        return email;
     }
 
-    public void setLastName(String lastName) {
+    public void setEmail(String email) {
 
-        this.lastName = lastName;
+        this.email = email;
     }
 
     public String getPassword() {
